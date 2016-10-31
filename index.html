@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playfair Code</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+<form name="PlayfairForm">
+      <table border="1">
+        <tr>
+          <td colspan="3">
+            <b>Playfair Encryption</b>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            Alphabet:<input type="text" name="ABC" size="32" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+            KeyWord:<input type="text" name="Key1" size="27"><br>
+            <textarea rows="10" name="PFS" cols="20"></textarea><input type="button" value="Create Square" onClick="PFS.value=MakePFSquare(ABC.value,Key1.value)">
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <textarea rows="20" name="Original" cols="40"></textarea>
+          </td>
+          <td>
+            <textarea rows="20" name="Encrypted" cols="40"></textarea>
+          </td>
+          </tr>
+        <tr>
+          <td align="center">
+            Original Message<br>
+            <input type="button" value="Encrypt" onClick="Encrypted.value=DoPlayfair(Original.value,ABC.value,Key1.value,'E',DupLet.value)">
+          </td>
+          <td align="center">Encrypted Message<br>
+            <input type="button" value="Decrypt" onClick="Decrypted.value=DoPlayfair(Encrypted.value,ABC.value,Key1.value,'D',DupLet.value)">
+            <input type="button" type="clear" value="Clear">
+          </td>
+          </tr>
+      </table>
+    </form>
+
+</body>
+</html>
